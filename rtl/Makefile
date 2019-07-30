@@ -9,7 +9,7 @@ all: $(PROJ).rpt $(PROJ).bin
 	yosys -p 'synth_ice40 -top top -json $@' $<
 
 %.asc: $(PIN_DEF) %.json
-	nextpnr-ice40 --seed $(SEED) --freq 30 --up5k --asc marlann.asc --pcf $(PIN_DEF) --json example.json
+	nextpnr-ice40 --seed $(SEED) --freq 30 --up5k --asc $@ --pcf $(PIN_DEF) --json $(PROJ).json
 
 %.bin: %.asc
 	icepack $< $@

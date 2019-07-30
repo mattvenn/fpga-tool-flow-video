@@ -1,4 +1,5 @@
 PROJ = simple
+SEED = 12
 
 PIN_DEF = icebreaker.pcf
 DEVICE = up5k

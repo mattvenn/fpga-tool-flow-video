@@ -2,7 +2,9 @@ PROJ = simple
 SEED = 12
 
 PIN_DEF = icebreaker.pcf
+PIN_DEF = hx1k.pcf
 DEVICE = up5k
+DEVICE = hx1k
 
 all: $(PROJ).rpt $(PROJ).bin
 
@@ -10,7 +12,7 @@ all: $(PROJ).rpt $(PROJ).bin
 	yosys -p 'synth_ice40 -top top -json $@' $<
 
 %.asc: $(PIN_DEF) %.json
-	nextpnr-ice40 --seed $(SEED) --freq 30 --up5k --asc $@ --pcf $(PIN_DEF) --json $(PROJ).json
+	MESA_GL_VERSION_OVERRIDE=3.2 MESA_GLSL_VERSION_OVERRIDE=150 nextpnr-ice40 --gui --seed $(SEED) --freq 30 --$(DEVICE) --asc $@ --pcf $(PIN_DEF) --json $(PROJ).json
 
 %.bin: %.asc
 	icepack $< $@

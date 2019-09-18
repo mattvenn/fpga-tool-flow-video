@@ -1,0 +1,13 @@
+set_io --warn-no-port LED1  95   # output
+#set_io --warn-no-port LED1  96   # output
+set_io --warn-no-port LED2  97   # output
+set_io --warn-no-port LED3  98   # output
+set_io --warn-no-port LED4  99   # output
+set_io --warn-no-port LED5  101  # output
+set_io --warn-no-port LED6  102  # output
+set_io --warn-no-port LED7  104  # output
+
+# ------------ User push buttons ----------------------------------------------
+set_io --warn-no-port BTN1  10  # input
+set_io --warn-no-port BTN2  11  # input
+

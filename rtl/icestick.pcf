@@ -1,0 +1,7 @@
+# full iCEstick pinout:
+# http://www.pighixxx.com/test/portfolio-items/icestick/
+
+set_io LED1 99
+
+set_io BTN1 44
+set_io BTN2 45
